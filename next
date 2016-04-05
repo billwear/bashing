@@ -1,0 +1,13 @@
+#!/bin/bash
+echo "*** important and due soon" > ~/tmp/todo.tmp
+grep ^1 ~/.calendar/todo | sort | cut -d" " -f 3- >> ~/tmp/todo.tmp
+echo "  " >> ~/tmp/todo.tmp
+echo "*** important but NOT due soon" >> ~/tmp/todo.tmp
+grep ^2 ~/.calendar/todo | sort | cut -d" " -f 3- >> ~/tmp/todo.tmp
+echo "  " >> ~/tmp/todo.tmp
+echo "*** NOT important, but due soon" >> ~/tmp/todo.tmp
+grep ^3 ~/.calendar/todo | sort | cut -d" " -f 3- >> ~/tmp/todo.tmp
+echo "  " >> ~/tmp/todo.tmp
+echo "*** NOT important and NOT due soon" >> ~/tmp/todo.tmp
+grep ^4 ~/.calendar/todo | sort | cut -d" " -f 3- >> ~/tmp/todo.tmp
+cat ~/tmp/todo.tmp

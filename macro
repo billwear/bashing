@@ -1,0 +1,6 @@
+#!/bin/bash
+cp ~/etc/autofocus ~/var/spool/backup
+cp ~/etc/blurry ~/var/spool/backup
+grep ZZZ ~/etc/autofocus >> ~/etc/blurry
+grep -v ZZZ ~/etc/autofocus > temp
+mv temp autofocus

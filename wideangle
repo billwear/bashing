@@ -1,0 +1,6 @@
+#!/bin/bash
+cp ~/etc/autofocus ~/var/spool/backup
+cp ~/etc/blurry ~/var/spool/backup
+cat autofocus > temp
+sed -e"s/ZZZ //g" blurry >> temp
+mv temp autofocus
